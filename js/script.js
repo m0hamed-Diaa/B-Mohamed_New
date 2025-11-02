@@ -3,7 +3,7 @@ let scrollTop = document.querySelector(".scroll-top-top");
 let navBar = document.querySelector(".navbar");
 
 window.onscroll = () => {
-    if (window.scrollY > 1000 || window.innerHeight > document.querySelector("#bigSkills").getBoundingClientRect().top) {
+    if (window.scrollY > 1000 || window.scrollY > document.querySelector("#bigSkills").getBoundingClientRect().top) {
         scrollTop.classList.add("active");
         navBar.style.opacity = '.8';
         document.querySelectorAll(".allSkills span").forEach((skill) => {
