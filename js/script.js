@@ -44,9 +44,9 @@ let profileDiv = document.querySelectorAll("#profile-content .box-content");
 if (window.localStorage.getItem("boxsSelected")) {
     linkLi.forEach((li) => {
         if (li.dataset.content === window.localStorage.getItem("boxsSelected")) {
-            li.classList.add("active");
+            li.classList.add("main-btn");
         }else {
-            li.classList.remove("active");
+            li.classList.remove("main-btn");
         }
     })
     profileDiv.forEach((div) => {
@@ -60,9 +60,9 @@ if (window.localStorage.getItem("boxsSelected")) {
 linkLi.forEach((li) => {
     li.addEventListener("click", (e) => {
         linkLi.forEach((li) => {
-            li.classList.remove("active");
+            li.classList.remove("main-btn");
         })
-        e.currentTarget.classList.add("active");
+        e.currentTarget.classList.add("main-btn");
         window.localStorage.setItem("boxsSelected", e.currentTarget.dataset.content);
         profileDiv.forEach((div) => {
             div.style.display = "none";
