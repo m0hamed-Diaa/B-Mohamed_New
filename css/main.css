@@ -355,6 +355,27 @@ body {
   animation: fadeInDown 1s ease-out 0.3s backwards;
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.profile-img {
+  width: 260px;
+  max-width: 100%;
+}
+@media (max-width: 410px) {
+  .profile-img {
+    width: 300px;
+  }
+}
+.profile-img img {
+  animation: float 4s ease-in-out infinite;
+}
 .main-btn {
   display: inline-block;
   padding: 15px 45px;
@@ -554,9 +575,13 @@ body {
   transition: transform var(--transition-duration) ease-in-out;
   cursor: pointer;
 }
-.tech-stack .row > div > .tech-item:hover {
-  transform: translateY(-3px);
+.tech-stack .row:hover > div > .tech-item:hover {
+  transform: translateY(-5px) scale(1.05);
   box-shadow: 0 10px 40px rgba(13, 110, 253, 0.4);
+  filter: blur(0);
+}
+.tech-stack .row:hover > div > .tech-item {
+  filter: blur(2px);
 }
 /* Technologies */
 /* Start Subscribe */
